@@ -1,8 +1,12 @@
-import { readSettingsFromFile, prepareFolders } from "./src/settings.js";
-import { prepareMailClient } from "./src/mail.js";
+import { readSettingsFromFile, prepareFolders } from './src/settings.js';
+import MailClient from './src/MailClient.js';
 
 const settings = readSettingsFromFile('./settings.json');
-const client = prepareMailClient(settings);
 
+prepareFolders(settings);
 
-console.log(prepareFolders(settings))
+// const client = prepareMailClient(settings);
+
+const Mail = new MailClient(settings);
+
+Mail.retrieve();
