@@ -1,12 +1,2 @@
-import { readSettingsFromFile, prepareFolders } from './src/settings.js';
-import MailClient from './src/MailClient.js';
+import { parseEDIfile } from "./src/parse";
 
-const settings = readSettingsFromFile('./settings.json');
-
-prepareFolders(settings);
-
-// const client = prepareMailClient(settings);
-
-const Mail = new MailClient(settings);
-
-Mail.retrieve();

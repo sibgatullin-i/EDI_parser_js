@@ -1,26 +1,23 @@
 {
   "name": "edi_parser_js",
   "version": "1.0.0",
-  "description": "play with Electron",
+  "description": "re-do EDI_parser for node.js",
   "main": "main.js",
   "type": "module",
-  "scripts": {
-    "start": "electron ."
-  },
   "repository": {
     "type": "git",
-    "url": "https://gitflic.ru/project/sibgatullin-i/edi_parser_js"
+    "url": "https://github.com/sibgatullin-i/EDI_parser_js"
   },
   "author": "Ilya S",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^27.1.0",
     "eslint": "^8.54.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.0"
   },
   "dependencies": {
     "lodash": "^4.17.21",
+    "node-html-parser": "^6.1.11",
     "yapople": "^0.4.8"
   }
 }
