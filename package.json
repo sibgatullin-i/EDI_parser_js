@@ -1,0 +1,22 @@
+{
+  "name": "edi_parser_js",
+  "version": "1.0.0",
+  "description": "play with Electron",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitflic.ru/project/sibgatullin-i/edi_parser_js"
+  },
+  "author": "Ilya S",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^27.1.0"
+  },
+  "dependencies": {
+    "yapople": "^0.4.8"
+  }
+}
