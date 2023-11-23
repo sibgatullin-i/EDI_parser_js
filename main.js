@@ -6,8 +6,9 @@
 import _ from 'lodash';
 import path from 'path';
 import { readSettingsFromFile, prepareFolders } from './src/settings.js';
-import { prepareMailClient } from './src/mail.js';
+import { prepareMailClient, saveAttachments } from './src/mail.js';
 import fs from 'fs';
+import async from 'async'
 
 const settings = readSettingsFromFile('./settings.json');
 
@@ -18,21 +19,9 @@ const client = prepareMailClient(settings);
 // main async routine
 (async (settings) => {
   await client.connect();
-  const files = [];
 
   const messages = await client.retrieveAll();
-  messages
-    .filter((message) => {
-      return _.includes(settings.mailFilterFrom, message.from[0].address) && Array.isArray(message.attachments)
-    })
-    .forEach((message) => {
-      message.attachments.forEach((att) => {
-        const uid = Math.floor(new Date() / 1000);
-        const filePath = path.join(settings.folderIn, `${uid}_${att.fileName}`);
-        fs.writeFileSync(filePath, att.content);
-        console.log(`File ${filePath} saved`)
-      })
-    })
+  const files = saveAttachments(messages, settings);
   // await client.deleteAll()
   await client.quit()
   
