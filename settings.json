@@ -1,0 +1,9 @@
+{
+  "mailHost": "outlook.office365.com",
+  "mailPort": 995,
+  "mailUsername": "xx",
+  "mailPassword": "xx",
+  "mailFilterFrom": [ "xxx.com" ],
+  "folderIn": "./files/In",
+  "folderOut": "./files/Out"
+}
